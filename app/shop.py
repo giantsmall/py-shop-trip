@@ -26,6 +26,8 @@ class Shop:
             position_price = self.products[item] * amount
             total_cost += position_price
             print(f"{amount} {item}s for {position_price} dollars")
+
+        #print(f"{customer.money - total_cost} = {customer.money} - {total_cost}")
         customer.money -= total_cost
         print(f"Total cost is {total_cost} dollars")
         print(f"See you again!\n")
