@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from app.customer import Customer
 from app.point import Point
 
@@ -16,7 +18,8 @@ class Shop:
 
     def make_shopping(self, customer: Customer) -> None:
         total_cost = 0
-        print("Date: 04/01/2021 12:33:41")
+        date_str = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+        print(f"Date: {date_str}")
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         for item in customer.product_cart.keys():
