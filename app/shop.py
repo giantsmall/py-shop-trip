@@ -1,3 +1,6 @@
+import datetime
+from unittest import mock
+
 from app.customer import Customer
 from app.point import Point
 
@@ -16,7 +19,10 @@ class Shop:
 
     def make_shopping(self, customer: Customer) -> None:
         total_cost = 0
-        print("Date: 04/01/2021 12:33:41")
+        with mock.patch("datetime.date") as datetime_mock:
+            datetime_mock.return_value = datetime.datetime(2021, 1,4, 12, 33, 41)
+
+            print("Date: 04/01/2021 12:33:41")
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         for item in customer.product_cart.keys():
