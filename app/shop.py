@@ -23,7 +23,7 @@ class Shop:
             amount = customer.product_cart[item]
             position_price = self.products[item] * amount
             total_cost += position_price
-            price_str = '{:g}'.format(float(position_price))
+            price_str = "{:g}".format(float(position_price))
             print(f"{amount} {item}s for {price_str} dollars")
         customer.money -= total_cost
         print(f"Total cost is {total_cost} dollars")
