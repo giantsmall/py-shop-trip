@@ -20,7 +20,13 @@ class Shop:
     def make_shopping(self, customer: Customer) -> None:
         total_cost = 0
         with mock.patch("datetime.date") as datetime_mock:
-            datetime_mock.return_value = datetime.datetime(2021, 1,4, 12, 33, 41)
+            datetime_mock.return_value = datetime.datetime(
+                2021,
+                1,
+                4,
+                12,
+                33,
+                41)
 
             print("Date: 04/01/2021 12:33:41")
         print(f"Thanks, {customer.name}, for your purchase!")
